@@ -33,14 +33,14 @@ cargo build --release
 ```
 
 > [!TIP]
-> The executable binary will be placed in ``./target/release/hash_cpu_bench``(.exe in Windows)
+> The executable binary will be placed in ``./target/release/hash-cpu-bench``(.exe in Windows)
 
 ## Interactive Mode
 
 You can use the CLI interactively to hash strings on-the-fly and see the results instantly:
 
 ```shell
-hash_cpu_bench
+hash-cpu-bench
 ```
 
 ### Features
@@ -68,7 +68,7 @@ Preset changed to Bcrypt12
 Run a full benchmark of all supported hash algorithms:
 
 ```shell
-hash_cpu_bench --benchmark
+hash-cpu-bench --benchmark
 ```
 
 By default, the benchmark will perform 15 iterations per algorithm and save results to ``./bench_<timestamp>.json``
@@ -76,11 +76,11 @@ By default, the benchmark will perform 15 iterations per algorithm and save resu
 ### Options
 * ``--alg <ALGORITHM>`` - Run benchmark only for the specified algorithm (e.g., ``Argon2idFast``, ``Argon2i``, ``Bcrypt10``).
 ```shell
-hash_cpu_bench --benchmark --alg Argon2idFast
+hash-cpu-bench --benchmark --alg Argon2idFast
 ```
 * ``--repeats <N>`` - Set the number of iterations per algorithm (default: ``15``).
 ```shell
-hash_cpu_bench --benchmark --repeats 20
+hash-cpu-bench --benchmark --repeats 20
 ```
 
 ## Contribution
