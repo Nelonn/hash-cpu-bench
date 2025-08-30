@@ -24,9 +24,11 @@ fn main() {
   let args = Args::parse();
   let repeats = args.repeats.unwrap_or(15);
 
-  println!("{} v{}",
-    format!("\x1b]8;;{}\x1b\\{}\x1b]8;;\x1b\\", env!("CARGO_PKG_REPOSITORY"), env!("CARGO_PKG_NAME")),
-    env!("CARGO_PKG_VERSION").green()
+  println!(
+    "\x1b]8;;{repo}\x1b\\{name}\x1b]8;;\x1b\\ v{version}",
+    repo = env!("CARGO_PKG_REPOSITORY"),
+    name = env!("CARGO_PKG_NAME"),
+    version = env!("CARGO_PKG_VERSION").green()
   );
 
   // benchmark mode

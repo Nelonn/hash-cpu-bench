@@ -114,7 +114,7 @@ impl Benchmark {
     let mut handles = vec![];
 
     for (idx, preset) in presets.iter().enumerate() {
-      let preset_clone = preset.clone();
+      let preset_clone = *preset;
       let line = (idx + 1) as u16;
       let handle = thread::spawn(move || {
         let result = Benchmark::run_algo(&preset_clone, repeats, line);
