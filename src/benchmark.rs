@@ -42,15 +42,16 @@ pub struct Benchmark {
 impl Benchmark {
   fn run_algo(preset: &Preset, repeats: u16, line: u16) -> BenchmarkResult {
     let mut result = BenchmarkResult::new();
-
     let alg_color = preset.as_ref().green().bold();
-    let number_color = " ".green();
+
+    // Прогрев
+    let _ = preset.hash(BENCHMARK_STR);
 
     let spinner_done = std::sync::Arc::new(std::sync::atomic::AtomicBool::new(false));
     let spinner_flag = spinner_done.clone();
-
     let spinner_line = line;
-    thread::spawn(move || {
+
+    let spinner_handle = thread::spawn(move || {
       let mut idx = 0;
       while !spinner_flag.load(std::sync::atomic::Ordering::Relaxed) {
         print!("\x1b[{};0H{} ", spinner_line, SPINNER[idx % SPINNER.len()].green());
@@ -67,19 +68,19 @@ impl Benchmark {
       result.add_iteration(duration);
 
       print!(
-        "\x1b[{};2H {} ({}{}/{}{}) avg={}ms",
+        "\x1b[{};2H {} ({}/{}) avg={}ms",
         line,
         alg_color,
-        number_color,
         i,
         repeats,
-        number_color,
-        result.average,
+        result.average
       );
       stdout().flush().unwrap();
     }
 
     spinner_done.store(true, std::sync::atomic::Ordering::Relaxed);
+    spinner_handle.join().unwrap();
+
     print!("\x1b[{};0H✔", line);
     stdout().flush().unwrap();
     println!();
@@ -111,22 +112,10 @@ impl Benchmark {
     print!("\x1b[2J");
     stdout().flush().unwrap();
 
-    let mut handles = vec![];
-
     for (idx, preset) in presets.iter().enumerate() {
-      let preset_clone = *preset;
       let line = (idx + 1) as u16;
-      let handle = thread::spawn(move || {
-        let result = Benchmark::run_algo(&preset_clone, repeats, line);
-        (preset_clone.as_ref().to_string(), result)
-      });
-      handles.push(handle);
-    }
-
-    for handle in handles {
-      if let Ok((preset_name, result)) = handle.join() {
-        self.results.insert(preset_name, result);
-      }
+      let result = Benchmark::run_algo(preset, repeats, line);
+      self.results.insert(preset.as_ref().to_string(), result);
     }
 
     match self.save() {
