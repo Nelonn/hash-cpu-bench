@@ -20,6 +20,7 @@ Recently, while writing a registration system for my backend project, I decided 
 | CPU         | Argon2idFast | Argon2idSecure | Argon2i | Argon2d | Bcrypt10 | Bcrypt12 | Bcrypt14 |
 |-------------|--------------|----------------|---------|---------|----------|----------|----------|
 | [Intel Xeon E5-2650v4 @ 2.20GHz](./benchmarks/Intel/Xeon/E5/2650v4.json) | 119ms        | 950ms         | 359ms   | 350ms   | 84ms    | 341ms    | 1398ms    |
+| [Intel(R) Core(TM) Ultra 5 125H @ 2Ghz](./benchmarks/Intel/Core/Ultra%205/125H.json) | 60ms        | 513ms         | 183ms   | 182ms   | 50ms    | 205ms    | 844ms    |
 ---
 
 ## Building
