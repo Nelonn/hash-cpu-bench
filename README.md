@@ -22,6 +22,8 @@ Recently, while writing a registration system for my backend project, I decided 
 | [Intel Xeon E5-2650v4 @ 2.20GHz](./benchmarks/Intel/Xeon/E5/2650v4.json) | 119ms        | 950ms         | 359ms   | 350ms   | 84ms    | 341ms    | 1398ms    |
 | [Intel(R) Core(TM) Ultra 5 125H @ 2Ghz](./benchmarks/Intel/Core/Ultra%205/125H.json) | 60ms        | 513ms         | 183ms   | 182ms   | 50ms    | 205ms    | 844ms    |
 | [AMD Ryzen 5950X @ 3.9Ghz](./benchmarks/AMD/Ryzen/5950x.json) | 61ms        | 477ms         | 180ms   | 179ms   | 49ms    | 195ms    | 792ms    |
+| [AMD Ryzen 5 2600 @ 3.4Ghz](./benchmarks/AMD/Ryzen/2600.json) | 109ms        | 911ms         | 337ms   | 342ms   | 59ms    | 232ms    | 931ms    | 
+ [AMD Ryzen 5 5600H @ 3.8Ghz](./benchmarks/AMD/Ryzen/5600h.json) | 86ms        | 632ms         | 253ms   | 251ms   | 50ms    | 203ms    | 812ms    |
 ---
 
 ## Building
