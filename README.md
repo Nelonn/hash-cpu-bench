@@ -23,7 +23,8 @@ Recently, while writing a registration system for my backend project, I decided 
 | [Intel(R) Core(TM) Ultra 5 125H @ 2Ghz](./benchmarks/Intel/Core/Ultra%205/125H.json) | 60ms        | 513ms         | 183ms   | 182ms   | 50ms    | 205ms    | 844ms    |
 | [AMD Ryzen 5950X @ 3.9Ghz](./benchmarks/AMD/Ryzen/5950x.json) | 61ms        | 477ms         | 180ms   | 179ms   | 49ms    | 195ms    | 792ms    |
 | [AMD Ryzen 5 2600 @ 3.4Ghz](./benchmarks/AMD/Ryzen/2600.json) | 109ms        | 911ms         | 337ms   | 342ms   | 59ms    | 232ms    | 931ms    | 
- [AMD Ryzen 5 5600H @ 3.8Ghz](./benchmarks/AMD/Ryzen/5600h.json) | 86ms        | 632ms         | 253ms   | 251ms   | 50ms    | 203ms    | 812ms    |
+| [AMD Ryzen 5 5600H @ 3.8Ghz](./benchmarks/AMD/Ryzen/5600h.json) | 86ms        | 632ms         | 253ms   | 251ms   | 50ms    | 203ms    | 812ms    |
+| [AMD Ryzen AI 9 HX 370](./benchmarks/AMD/Ryzen/AI_9_HX_370.json) | 45ms | 436ms | 149ms | 145ms | 42ms | 172ms | 686ms |
 ---
 
 ## Building
